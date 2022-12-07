@@ -1,0 +1,16 @@
+{% extends 'appcoder/base.html' %}
+{% block contenidoQueCambia %}
+
+<h1 style="text-align: center">Agregar un Profesor:</h1>
+<form style="text-align: center" action="/appcoder/profesores/crear/" method="post">
+    {% csrf_token %}
+
+    {{formulario.as_p}}
+
+    <input type="submit" value="Cargar profesor">
+    <p>
+        <a style="text-align: center" href='/appcoder/profesores/'/>Volver</a>
+    </p>
+</form>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'appcoder/base.html' %}
+{% block contenidoQueCambia %}
+
+<h1 style="text-align: center">Buscar un Estudiante:</h1>
+<form style="text-align: center" action="{% url 'estudiante_buscar' %}" method="GET">
+    
+    {% csrf_token %}
+
+    <p>
+        Ingrese el nombre del Estudiante: <input type='text' name='nombre_estudiante'>
+        <input type="submit" value="Buscar!">
+    </p>
+
+</form>
+
+<section class="features-icons bg-light text-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-4">
+                <nav class="navbar navbar-light bg-light static-top">
+                    <div class="container">
+                        <a class="btn btn-primary" href="/appcoder/estudiantes/crear/">Agregar estudiante</a>
+                        <a class="btn btn-primary" href="/appcoder/estudiantes_vista/">Ver estudiantes</a>
+                    </div>
+                </nav>
+            </div>                    
+        </div>
+    </div>
+</section>
+
+{% endblock %}

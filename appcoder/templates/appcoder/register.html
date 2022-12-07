@@ -1,0 +1,17 @@
+{% extends 'appcoder/base.html' %}
+
+{% block contenidoQueCambia %}
+
+{% if errors %}
+    <p style="color: red">Errores en el registro de usuario: {{errors}}</p>
+{% endif %}
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button type="submit">Registrar usuario</button>
+    <a style='text-align: center'; href='/appcoder/login/'/>Volver</a>
+</form>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'appcoder/base.html' %}
+{% block contenidoQueCambia %}
+
+<h1 style="text-align: center">Buscar un Profesor:</h1>
+<form style="text-align: center" action="{% url 'profesor_buscar' %}" method="GET">
+    
+    {% csrf_token %}
+
+    <p>
+        Ingrese el nombre del Profesor: <input type='text' name='nombre_profesor'>
+        <input type="submit" value="Buscar!">
+    </p>
+    <p>{{rta}}</p>
+
+</form>
+
+<section class="features-icons bg-light text-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-4">
+                <nav class="navbar navbar-light bg-light static-top">
+                    <div class="container">
+                        <a class="btn btn-primary" href="/appcoder/profesores/crear/">Agregar profesor</a>
+                        <a class="btn btn-primary" href="/appcoder/profesores_vista/">Ver profesores</a>
+                    </div>
+                </nav>
+            </div>                    
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+

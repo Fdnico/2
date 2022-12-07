@@ -1,0 +1,15 @@
+{% extends 'appcoder/base.html' %}
+{% block contenidoQueCambia %}
+
+<h1 style='text-align: center'>Agregar un Estudiante:</h1>
+<form style='text-align: center' action='/appcoder/estudiantes/crear/' method='post'>
+    {% csrf_token %}
+
+    {{formulario.as_p}}
+
+    <input type='submit' value='Cargar estudiante'>
+    <a href='/appcoder/estudiantes'/>Volver</a>
+</form>
+
+
+{% endblock %}

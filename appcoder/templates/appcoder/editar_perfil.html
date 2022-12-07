@@ -1,0 +1,18 @@
+{% extends 'appcoder/base.html' %}
+{% block contenidoQueCambia %}
+
+{% if errors %}
+    <p> <p style="color: red"> {{errores}} </p></p>
+{% endif %}
+
+<form method="POST">
+
+    {% csrf_token %}
+    {{form.as_p}}
+
+    <input type="submit" value="Guardar"
+
+
+</form>
+
+{% endblock %}

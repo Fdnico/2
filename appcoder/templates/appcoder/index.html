@@ -1,0 +1,13 @@
+{% extends 'appcoder/base.html' %}
+
+{% block contenidoQueCambia %}
+
+<h1 style="text-align: center">Primera entrega del Proyecto Final</h1>
+
+{% if user.is_authenticated %}
+
+<a class="btn btn-primary" href="/appcoder/agregar_avatar">Agregar avatar</a>
+
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'appcoder/base.html' %}
+{% block contenidoQueCambia  %}
+
+<form method='post'>
+    {% csrf_token %}
+
+    <p>
+        Estas seguro que queres borrar el entregable '{{object.nombre}}'?
+        <input type='submit' value='Si'>
+    </p>
+
+    <a href='/appcoder/estudiantes/' >Volver</a>
+</form>
+
+{% endblock %}

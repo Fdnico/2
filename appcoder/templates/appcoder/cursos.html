@@ -1,0 +1,32 @@
+{% extends 'appcoder/base.html' %}
+{% block contenidoQueCambia %}
+
+<h1 style="text-align: center">Buscar un curso:</h1>
+<form style="text-align: center" action="{% url 'curso_buscar' %}" method="GET">
+    
+    {% csrf_token %}
+
+    <p>
+        Nombre del curso: <input type='text' name='nombre_curso'>
+        <input type="submit" value="Buscar!">
+    </p>
+    <p>{{rta}}</p>
+
+</form>
+
+<section class="features-icons bg-light text-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-4">
+                <nav class="navbar navbar-light bg-light static-top">
+                    <div class="container">
+                        <a class="btn btn-primary" href="/appcoder/cursos/crear/">Agregar Curso</a>
+                        <a class="btn btn-primary" href="/appcoder/cursos_vista/">Ver cursos</a>
+                    </div>
+                </nav>
+            </div>                    
+        </div>
+    </div>
+</section>
+
+{% endblock %}

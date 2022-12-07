@@ -1,0 +1,35 @@
+{% extends 'appcoder/base.html' %}
+{% block contenidoQueCambia %}
+
+{% if profesor %}
+<h2 style="color: rgb(35, 29, 117)">Profesor encontrado:</h2>
+
+<p>
+    {% for profesor in profesor %}
+
+        <li>Nombre: {{profesor.nombre}}</li>
+        <li>Apellido: {{profesor.apellido}}</li>
+        <li>Profesion: {{profesor.profesion}}</li>
+
+    {% endfor %}
+</p>
+
+{% else %}
+<h2 style="text-align: center; color: rgb(35, 29, 117)">Profesor no encontrado</h2>
+{% endif %}
+
+<h2 style="text-align: center; color: rgb(167, 11, 11)">{{rta}}</h2>
+<section class="features-icons bg-light text-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-4">
+                <nav class="navbar navbar-light bg-light static-top">
+                    <div class="container">
+                        <a style='text-align: center'; href='/appcoder/profesores/'>Volver</a>
+                    </div>
+                </nav>
+            </div>                    
+        </div>
+    </div>
+</section>
+{% endblock %}

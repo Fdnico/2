@@ -1,0 +1,31 @@
+{% extends 'appcoder/base.html' %}
+{% block contenidoQueCambia %}
+
+<h1 style="text-align: center">Profesores</h1>
+<a style="text-align: center">
+
+{% if listado_profesores %}
+<p style="text-align: center">Estos son los profesores:</p>
+
+    {% for profesor in listado_profesores %}
+        <li>Profesor: {{profesor}} <a href="{% url 'profesores_editar' profesor.id %}">Editar</a> <a href="{% url 'profesores_borrar' profesor.id %}">⚠Borrar⚠</a> </li>
+    {% endfor %}
+{% else %}
+    <p>En este momento no hay profesores registrados</p>
+{% endif %}
+    <section class="features-icons bg-light text-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-4">
+                    <nav class="navbar navbar-light bg-light static-top">
+                        <div class="container">
+                            <a style='text-align: center'; href='/appcoder/profesores'/>Volver</a>
+                        </div>
+                    </nav>
+                </div>                    
+            </div>
+        </div>
+    </section> 
+</a>
+
+{% endblock %}
